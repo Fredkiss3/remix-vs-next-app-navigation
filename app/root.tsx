@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -21,7 +22,21 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+        <nav>
+          <h1>Welcome to Next</h1>
+          <ul>
+            <li>
+              <Link to="/">Home page</Link>
+            </li>
+            <li>
+              <Link to="/ssr-streaming">Go to streaming</Link>
+            </li>
+            <li>
+              <Link to="/ssr-blocking">Go to Blocking SSR</Link>
+            </li>
+          </ul>
+        </nav>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
