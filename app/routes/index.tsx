@@ -2,8 +2,10 @@ import type { HeadersFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
 
-export const headers: HeadersFunction = ({ loaderHeaders }) => {
-  return loaderHeaders;
+export const headers: HeadersFunction = () => {
+  return {
+    "cache-control": "public, s-max-age=86400, stale-while-revalidate",
+  };
 };
 
 export function loader() {
