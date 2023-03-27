@@ -3,16 +3,9 @@ import { json } from "@vercel/remix";
 
 export async function loader() {
   await wait(100);
-  return json(
-    {
-      blocking: "ok",
-    },
-    {
-      headers: {
-        "cache-control": "public, s-max-age=86400, stale-while-revalidate",
-      },
-    }
-  );
+  return json({
+    blocking: "ok",
+  });
 }
 export default function SSRBlocking() {
   return (
