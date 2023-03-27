@@ -30,9 +30,6 @@ export default function App() {
               <Link to="/">Home page</Link>
             </li>
             <li>
-              <Link to="/ssr-streaming">Go to streaming</Link>
-            </li>
-            <li>
               <Link to="/ssr-blocking">Go to Blocking SSR</Link>
             </li>
           </ul>

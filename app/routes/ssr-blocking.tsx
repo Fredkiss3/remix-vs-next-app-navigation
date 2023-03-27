@@ -1,7 +1,7 @@
 import { wait } from "~/lib.server";
 
 export async function loader() {
-  await wait(2000);
+  await wait(100);
   return {
     streamed: "ok",
   };
