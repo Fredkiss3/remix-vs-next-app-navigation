@@ -9,19 +9,23 @@ export const headers: HeadersFunction = () => {
 };
 
 export function loader() {
-  return json({
-    formattedTime: new Intl.DateTimeFormat("en", {
-      second: "2-digit",
-      minute: "2-digit",
-      hour: "2-digit",
-      day: "2-digit",
-      month: "2-digit",
-      year: "2-digit",
-    }).format(new Date()),
-    headers: {
-      "cache-control": "public, s-max-age=86400, stale-while-revalidate",
+  return json(
+    {
+      formattedTime: new Intl.DateTimeFormat("en", {
+        second: "2-digit",
+        minute: "2-digit",
+        hour: "2-digit",
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
+      }).format(new Date()),
     },
-  });
+    {
+      headers: {
+        "cache-control": "public, s-max-age=86400, stale-while-revalidate",
+      },
+    }
+  );
 }
 
 export default function Index() {
